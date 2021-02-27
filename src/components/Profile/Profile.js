@@ -6,10 +6,11 @@ import Stats from "./Stats/Stats";
 
 const Profile = ({ obj }) => {
   const { name, avatar, tag, location, stats } = obj;
+  const { followers, views, likes } = stats;
   return (
     <div className={style.profile}>
       <Description avatar={avatar} name={name} tag={tag} location={location} />
-      <Stats stats={stats} />
+      <Stats followers={followers} views={views} likes={likes} />
     </div>
   );
 };
@@ -17,5 +18,23 @@ const Profile = ({ obj }) => {
 export default Profile;
 
 Profile.propTypes = {
-  obj: PropTypes.object,
+  obj: PropTypes.shape({
+    name: PropTypes.string,
+    avatar: PropTypes.string,
+    tag: PropTypes.string,
+    location: PropTypes.string,
+    stats: PropTypes.shape({
+      followers: PropTypes.number,
+      views: PropTypes.number,
+      likes: PropTypes.number,
+    }),
+  }),
+};
+
+Profile.defaultProps = {
+  avatar:
+    "https://cdn4.iconfinder.com/data/icons/small-n-flat/24/user-alt-512.png",
+  followers: 0,
+  views: 0,
+  likes: 0,
 };

@@ -25,3 +25,9 @@ Description.propTypes = {
   tag: PropTypes.string,
   location: PropTypes.string,
 };
+
+Description.defaultProps = {
+  avatar:
+    "https://cdn4.iconfinder.com/data/icons/small-n-flat/24/user-alt-512.png",
+  name: "Unknown",
+};

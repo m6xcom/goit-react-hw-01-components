@@ -2,8 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import style from "./Stats.module.css";
 
-const Stats = ({ stats }) => {
-  const { followers, views, likes } = stats;
+const Stats = ({ followers, views, likes }) => {
   return (
     <ul className={style.stats}>
       <li>
@@ -25,5 +24,13 @@ const Stats = ({ stats }) => {
 export default Stats;
 
 Stats.propTypes = {
-  stats: PropTypes.objectOf(PropTypes.number),
+  followers: PropTypes.number,
+  views: PropTypes.number,
+  likes: PropTypes.number,
+};
+
+Stats.defaultProps = {
+  followers: 0,
+  views: 0,
+  likes: 0,
 };
