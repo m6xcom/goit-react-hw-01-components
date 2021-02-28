@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import style from "./StatList.module.css";
+import StatListItem from "./StatListItem/StatListItem";
 
 const StatList = ({ stats }) => {
   let colorId = 0;
@@ -11,14 +12,12 @@ const StatList = ({ stats }) => {
         let currentColor = colors[colorId];
         colorId < 2 ? (colorId += 1) : (colorId = 0);
         return (
-          <li
+          <StatListItem
             key={el.id}
-            style={{ backgroundColor: currentColor }}
-            className={style.item}
-          >
-            <span className={style.label}>{el.label}</span>
-            <span className={style.percentage}>{el.percentage}%</span>
-          </li>
+            backgroundColor={currentColor}
+            label={el.label}
+            percentage={el.percentage}
+          />
         );
       })}
     </ul>
