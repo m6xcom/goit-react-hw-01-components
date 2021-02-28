@@ -1,0 +1,7 @@
+.item {
+  background-color: #fff;
+}
+
+.item:nth-child(2n) {
+  background-color: #ecf1f4;
+}
