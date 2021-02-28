@@ -2,9 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 import style from "./StatListItem.module.css";
 
-const StatListItem = ({ backgroundColor, label, percentage }) => {
+const StatListItem = ({ label, percentage }) => {
   return (
-    <li style={{ backgroundColor: backgroundColor }} className={style.item}>
+    <li className={style.item}>
       <span className={style.label}>{label}</span>
       <span className={style.percentage}>{percentage}%</span>
     </li>
@@ -14,7 +14,6 @@ const StatListItem = ({ backgroundColor, label, percentage }) => {
 export default StatListItem;
 
 StatListItem.propTypes = {
-  backgroundColor: PropTypes.string,
   label: PropTypes.string,
   percentage: PropTypes.number,
 };
