@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import style from "./StatList.module.css";
 import StatListItem from "./StatListItem/StatListItem";
+import style from "./StatList.module.css";
 
 const StatList = ({ stats }) => {
   return (

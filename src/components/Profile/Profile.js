@@ -6,11 +6,10 @@ import Stats from "./Stats/Stats";
 
 const Profile = ({ obj }) => {
   const { name, avatar, tag, location, stats } = obj;
-  const { followers, views, likes } = stats;
   return (
     <div className={style.profile}>
       <Description avatar={avatar} name={name} tag={tag} location={location} />
-      <Stats followers={followers} views={views} likes={likes} />
+      <Stats stats={stats} />
     </div>
   );
 };

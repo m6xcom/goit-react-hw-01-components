@@ -2,7 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import style from "./Stats.module.css";
 
-const Stats = ({ followers, views, likes }) => {
+const Stats = ({ stats }) => {
+  const { followers, views, likes } = stats;
   return (
     <ul className={style.stats}>
       <li>
